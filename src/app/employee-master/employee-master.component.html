@@ -1,0 +1,74 @@
+
+  <div class="container mt-5">
+    <h2 class="mb-4">Employee Details</h2>
+    <form>
+     
+      <div class="mb-3">
+        <label for="firstName" class="form-label">First Name</label>
+        <input type="text" name="txtFn" #fn="ngModel" [(ngModel)]="empObj.firstName" class="form-control" id="firstName" value="rafi" required minlength="3">
+         <div class="text-danger">
+          @if(fn.errors?.['required']){
+            <span>firstName is required</span>
+          }
+          @else if (fn.errors?.['minlength']) {
+            <span>min char 3 required</span>
+
+          }
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input type="text" name="txtLn" #ln="ngModel" [(ngModel)]="empObj.lastName" class="form-control" id="lastName" value="khan" required minlength="3">
+        <div class="text-danger">
+          @if(ln.errors?.['required']){
+            <span>lastName is required</span>
+          }
+          @else if (ln.errors?.['minlength']) {
+            <span>min char 3 required</span>
+
+          }
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" name="txtEmail" #em="ngModel" [(ngModel)]="empObj.email" class="form-control" id="email" value="raf@gmail.com" required email>
+         <div class="text-danger">
+          @if(em.errors?.['required']){
+            <span>email is required</span>
+          }
+          @else if (em.errors?.['email']) {
+            <span>email is not correct</span>
+
+          }
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="contactNo" class="form-label">Contact Number</label>
+        <input type="tel" name="telNo" #no="ngModel" [(ngModel)]="empObj.contactNo" class="form-control" id="contactNo" value="9349556784" required minlength="10" maxlength="10">
+         <div class="text-danger">
+          @if(no.errors?.['required']){
+            <span>NO is required</span>
+          }
+          @else if (no.errors?.['minlength']) {
+            <span>min 10</span>
+
+          }
+          @else if (no.errors?.['maxlength']) {
+            <span>max 10</span>
+          }
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="city" class="form-label">City</label>
+        <input type="text" name="txtCity" [(ngModel)]="empObj.city" class="form-control" id="city" value="naurang">
+      </div>
+      <div class="mb-3">
+        <label for="address" class="form-label">Address</label>
+        <textarea name="txtaddress" [(ngModel)]="empObj.address" class="form-control" id="address" rows="2">fjeiir</textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="onSave()">Submit</button>
+    </form>
+  </div>
+
+
+

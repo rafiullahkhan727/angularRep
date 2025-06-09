@@ -1,0 +1,35 @@
+<!--list-->
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Employee Contects</h2>
+    
+    <!-- Table -->
+    <div class="mt-5">
+        <h4>Contect List</h4>
+        <table class="table table-bordered table-striped mt-3">
+            <thead class="table-primary">
+                <tr>
+                    <th>S.No</th>
+                    <th>firstName</th>
+                    <th>lastName</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                   
+                </tr>
+            </thead>
+            <tbody id="employeeTableBody">
+                <!-- Dynamic rows go here -->
+                @for (item of empList; track $index) {
+                <tr>
+                    <td>{{$index+1}}</td>
+                    <td>{{item.firstName}}</td>
+                    <td>{{item.lastName}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.contactNo}}</td>
+                   
+                   
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
